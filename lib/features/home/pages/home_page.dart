@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_swipe/features/home/widgets/jobcart.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -31,6 +32,29 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      body: PageView(
+        children: [
+          Dismissible(
+              key: UniqueKey(),
+              onDismissed:(direction){
+                if (direction == DismissDirection.endToStart) {
+                  print("Dislike");
+                } else if (direction == DismissDirection.startToEnd) {
+                  print("Like");
+                }
+              },
+                child: const JobCard(title: "SoftwareEntwickler",
+                    company: "Jenslacorp",
+                    location: "Essen",
+                    // date: "26.08.2025",
+                    description: "Das ist die Jobbeschreibung. Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla ",
+                    salary: "Gehalt: 5000€"),
+          ),
+
+    ],
+
+
+    ),
     );
+    }
   }
-}
