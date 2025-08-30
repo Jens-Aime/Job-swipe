@@ -5,6 +5,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final PageController pageController = PageController(viewportFraction: 1);
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -33,7 +34,27 @@ class HomePage extends StatelessWidget {
         ),
       ),
       body: PageView(
+        controller: pageController,
+
         children: [
+          Dismissible(
+              key: UniqueKey(),
+              onDismissed:(direction){
+                if (direction == DismissDirection.endToStart) {
+                  print("Dislike");
+
+                } else if (direction == DismissDirection.startToEnd) {
+                  print("Like");
+                }
+              },
+
+                child: const JobCard(title: "SoftwareEntwickler",
+                    company: "Jenslacorp",
+                    location: "Essen",
+                    // date: "26.08.2025",
+                    description: "Das ist die Jobbeschreibung. Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla ",
+                    salary: "Gehalt: 5000€"),
+          ),
           Dismissible(
               key: UniqueKey(),
               onDismissed:(direction){
@@ -43,18 +64,32 @@ class HomePage extends StatelessWidget {
                   print("Like");
                 }
               },
-                child: const JobCard(title: "SoftwareEntwickler",
+                child: const JobCard(title: "GartenPutzer",
                     company: "Jenslacorp",
-                    location: "Essen",
+                    location: "Bochum",
                     // date: "26.08.2025",
                     description: "Das ist die Jobbeschreibung. Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla ",
-                    salary: "Gehalt: 5000€"),
+                    salary: "Gehalt: 500€"),
+                ),
+          Dismissible(
+            key: UniqueKey(),
+            onDismissed:(direction){
+              if (direction == DismissDirection.endToStart) {
+                print("Dislike");
+              } else if (direction == DismissDirection.startToEnd) {
+                print("Like");
+              }
+            },
+            child: const JobCard(title: "DosenPutzer",
+                company: "Jenslacorp",
+                location: "Bochum",
+                // date: "26.08.2025",
+                description: "Das ist die Jobbeschreibung. Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla ",
+                salary: "Gehalt: 500€"),
           ),
 
-    ],
-
-
-    ),
-    );
-    }
-  }
+                ],
+              ),
+          );
+        }
+      }
