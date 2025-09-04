@@ -7,6 +7,7 @@ class JobBlock extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'JOB SWIPE',
       home: const HomePage(),
 
