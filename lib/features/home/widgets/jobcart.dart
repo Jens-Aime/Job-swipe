@@ -12,8 +12,8 @@ class JobCard extends StatelessWidget {
       margin: const EdgeInsets.only(
         left: 40.0,
         right: 40.0,
-        top: 40.0,
-        bottom: 100.0,
+        top: 10.0,
+        bottom: 10.0,
       ),
       child: Padding(
         padding: const EdgeInsets.all(12),

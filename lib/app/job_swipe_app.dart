@@ -11,6 +11,7 @@ class JobBlock extends StatelessWidget {
       title: 'JOB SWIPE',
       home: const HomePage(),
 
+
     );
   }
 

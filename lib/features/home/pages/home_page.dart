@@ -26,6 +26,12 @@ class HomePage extends StatelessWidget {
         ],
         ),
       ),
+      bottomNavigationBar: NavigationBar(
+          destinations: [
+            NavigationDestination( icon: Icon(Icons.home), label: 'Home'),
+            NavigationDestination(icon: Icon(Icons.settings), label: 'Settings',)
+    ],
+      ),
       body: Center(
         child: ListView(
           children: [
@@ -33,7 +39,12 @@ class HomePage extends StatelessWidget {
                 company: 'Jenslacorp',
                 location: 'Bochum',
                 description: 'Das ist die Jobbeschreibung. Bla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla BlaBla Bla Bla ',
-                salary: 'Gehalt: 500€'),
+                salary: 'Gehalt: 500€',
+            ),
+
+
+
+
             JobCard(title: 'ZahnPutzer',
                 company: 'Jenslacorp',
                 location: 'Bochum',
