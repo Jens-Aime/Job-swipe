@@ -17,59 +17,67 @@ class JobCard extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              company,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              location,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4),
-            // Text(
-            //   date,
-            //   style: const TextStyle(
-            //     fontSize: 10,
-            //     fontWeight: FontWeight.normal,
-            //   ),
-            // ),
-            // const SizedBox(height: 4),
-            Text(
-              description,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 4),
-            Text(
-              salary,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ]
-              ),
-            ),
-        );
-  }
+        child:  ElevatedButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/second');
+          },
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  company,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  location,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                // Text(
+                //   date,
+                //   style: const TextStyle(
+                //     fontSize: 10,
+                //     fontWeight: FontWeight.normal,
+                //   ),
+                // ),
+                // const SizedBox(height: 4),
+                Text(
+                  description,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  salary,
+                  style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                FloatingActionButton(onPressed: () {},
+                  child: Icon(Icons.favorite),
+                ),
+              ]
+          ),
+        ),
+      )
+    );
+    }
 }

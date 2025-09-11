@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(onPressed: () => Navigator.of(context).pop(true), icon: Icon(Icons.view_headline_rounded)),
         centerTitle: true,
           title: Column(
             children: [Text('JOB',
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
       bottomNavigationBar: NavigationBar(
           destinations: [
             NavigationDestination( icon: Icon(Icons.home), label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.settings), label: 'Settings',)
+            NavigationDestination(icon: Icon(Icons.person), label: 'Profile',)
     ],
       ),
       body: Center(
